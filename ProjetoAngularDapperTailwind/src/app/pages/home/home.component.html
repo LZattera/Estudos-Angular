@@ -1,0 +1,49 @@
+<!-- Teste com classes Tailwind básicas -->
+<div class="bg-blue-200 p-4 m-10">
+  <button class="bg-green-400 w-full">Cadastrar novo Usuário</button>
+  <div>
+    <label>Pesquisar</label>
+    <input type="text" placeholder="Qual usuário deseja buscar?" (input)="search($event)"/>
+  </div>
+
+  <table class="mt-5">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nome Completo</th>
+        <th>Email</th>
+        <th>Cargo</th>
+        <th>Salário</th>
+        <th>Situação</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      @if(usuarios.length >0){
+        @for (usuario of usuarios; track $index) {
+          <tr>
+            <td>{{usuario.id}}</td>
+            <td>{{usuario.nomeCompleto}}</td>
+            <td>{{usuario.email}}</td>
+            <td>{{usuario.cargo}}</td>
+            <td>{{usuario.salario}}</td>
+            <td>{{usuario.situacao == true? "Ativo": "Inativo"}}</td>
+            <td class="flex justify-center align-middle">
+
+              <button class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">Editar</button>
+              <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Detalhes</button>
+              <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" (click)="delete(usuario.id)">Excluir</button>
+
+            </td>
+          </tr>
+
+        }
+      }@else{
+        <tr class="text-center">
+          <td colspan="7">Nenhum usuário cadastrado</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+
+</div>
