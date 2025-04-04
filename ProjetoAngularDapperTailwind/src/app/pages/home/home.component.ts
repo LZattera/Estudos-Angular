@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioListar } from '../../models/Usuario';
 import { UsuarioService } from '../../services/usuario.service';
+import { RouterLink, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [
+    RouterModule
+  ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

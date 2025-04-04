@@ -1,6 +1,6 @@
 <!-- Teste com classes Tailwind básicas -->
 <div class="bg-blue-200 p-4 m-10">
-  <button class="bg-green-400 w-full">Cadastrar novo Usuário</button>
+  <button class="bg-green-400 w-full" [routerLink]="['/cadastro']" routerLinkActive="router-link-active" >Cadastrar novo Usuário</button>
   <div>
     <label>Pesquisar</label>
     <input type="text" placeholder="Qual usuário deseja buscar?" (input)="search($event)"/>
