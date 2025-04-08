@@ -1,0 +1,5 @@
+@if (usuario) {
+    <div>
+        <app-formulario [dadosUsuario]="usuario" [btnAcao]="btn" [titulo]="titulo" (onSubmit)="editarUsuario($event)"></app-formulario>
+    </div>
+}
